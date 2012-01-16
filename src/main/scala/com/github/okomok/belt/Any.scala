@@ -11,7 +11,13 @@ package belt
 // x.type seems broken.
 // Also, the type-inferencer needs explicit `self` calls.
 
-trait Any {
-    type self = this.type
-     val self: self = this
+trait Any { outer =>
+    final  val self: self = this
+    final type self = this.type
+
+     def asNat: asNat = throw new Error("Any.asNat")
+    type asNat <: Nat
+
+     def asBoolean: asBoolean = throw new Error("Any.asBoolean")
+    type asBoolean <: Boolean
 }

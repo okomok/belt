@@ -39,4 +39,9 @@ class NatTest extends org.scalatest.junit.JUnit3Suite {
         mustBeTrue { foo(_3, _5) }
         mustBeFalse { foo(_4, _5) }
     }
+
+    def testPlus {
+        def plus(n: Nat, m: Nat) = n.plus(m)
+        mustBeTrue { plus(_3, _2) equal _5 }
+    }
 }

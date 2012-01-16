@@ -34,8 +34,8 @@ object Nil extends List {
 object Cons {
     def apply(x: Any, xs: List) = new List {
         override type head = x.self
-        override  val head: head = x
+        override  val head: head = x.self
         override type tail = xs.self
-        override  val tail: tail = xs
+        override  val tail: tail = xs.self
     }
 }

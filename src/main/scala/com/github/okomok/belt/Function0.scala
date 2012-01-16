@@ -9,6 +9,6 @@ package belt
 
 
 trait Function0 extends Any {
-    type apply[a1 <: Any]
-     def apply(a1: Any): apply[a1.self]
+    type apply <: Any
+     def apply: apply
 }
