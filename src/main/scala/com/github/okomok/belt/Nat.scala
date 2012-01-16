@@ -27,8 +27,8 @@ object _0 extends Nat {
     override type decrement = Nothing
     override lazy val decrement: decrement = throw new Error("underflow")
 
-    override type isZero = True.type
-    override  val isZero: isZero = True
+    override type isZero = `true`.type
+    override  val isZero: isZero = `true`
 }
 
 object _1 extends Nat {
@@ -38,8 +38,8 @@ object _1 extends Nat {
     override type decrement = _0.type
     override  val decrement: decrement = _0
 
-    override type isZero = False.type
-    override  val isZero: isZero = False
+    override type isZero = `false`.type
+    override  val isZero: isZero = `false`
 }
 
 object _2 extends Nat {
@@ -49,8 +49,8 @@ object _2 extends Nat {
     override type decrement = _1.type
     override  val decrement: decrement = _1
 
-    override type isZero = False.type
-    override  val isZero: isZero = False
+    override type isZero = `false`.type
+    override  val isZero: isZero = `false`
 }
 
 object _3 extends Nat {
@@ -60,8 +60,8 @@ object _3 extends Nat {
     override type decrement = _2.type
     override  val decrement: decrement = _2
 
-    override type isZero = False.type
-    override  val isZero: isZero = False
+    override type isZero = `false`.type
+    override  val isZero: isZero = `false`
 }
 
 object _4 extends Nat {
@@ -71,8 +71,8 @@ object _4 extends Nat {
     override type decrement = _3.type
     override  val decrement: decrement = _3
 
-    override type isZero = False.type
-    override  val isZero: isZero = False
+    override type isZero = `false`.type
+    override  val isZero: isZero = `false`
 }
 
 object _5 extends Nat {
@@ -82,6 +82,6 @@ object _5 extends Nat {
     override type decrement = _4.type
     override  val decrement: decrement = _4
 
-    override type isZero = False.type
-    override  val isZero: isZero = False
+    override type isZero = `false`.type
+    override  val isZero: isZero = `false`
 }

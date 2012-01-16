@@ -18,18 +18,18 @@ sealed abstract class Boolean extends Any {
 }
 
 
-object True extends Boolean {
-    override type not = False.type
-    override  val not: not = False
+object `true` extends Boolean {
+    override type not = `false`.type
+    override  val not: not = `false`
 /*
     override type `if`[then <: Function0, _else <: Function0] = then
     override  def `if`(then: Function0, _else: Function0): `if`[then.self, _else.self] = then
 */
 }
 
-object False extends Boolean {
-    override type not = True.type
-    override  val not: not = True
+object `false` extends Boolean {
+    override type not = `true`.type
+    override  val not: not = `true`
 /*
     override type `if`[then <: Function0, _else <: Function0] = _else
     override  def `if`(then: Function0, _else: Function0): `if`[then.self, _else.self] = _else
