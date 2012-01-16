@@ -9,6 +9,6 @@ package belt
 
 
 trait Function0 extends Any {
+     def apply  : Any
     type apply <: Any
-     def apply: apply
 }

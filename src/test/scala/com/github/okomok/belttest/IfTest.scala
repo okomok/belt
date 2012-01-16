@@ -26,10 +26,9 @@ class IfTest extends org.scalatest.junit.JUnit3Suite {
         override  val apply: apply = this
     }
 
-
     def testTrivial {
-        val x: X.type = `if`(`true`, X, Y).apply
-        val y: Y.type = `if`(`false`, X, Y).apply
+        val x: X.type = `true`.`if`(X, Y).apply
+        val y: Y.type = `false`.`if`(X, Y).apply
     }
 
     def testTrivial2 {

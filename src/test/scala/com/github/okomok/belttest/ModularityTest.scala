@@ -13,7 +13,7 @@ import Nat._
 
 class ModularityTest extends org.scalatest.junit.JUnit3Suite {
 
-     def not(b: Boolean)= b.not.self
+     def not(b: Boolean) = b.not.self
      def notNot(b: Boolean) = not(not(b)).self
      def notNotNot(b: Boolean) = not(not(not(b))).self
 

@@ -13,11 +13,11 @@ package belt
 
 trait Any { outer =>
     final  val self: self = this
-    final type self = this.type
+    final type self       = this.type
 
-     def asNat: asNat = throw new Error("Any.asNat")
+     def asNat  : Nat = throw new Error("Any.asNat")
     type asNat <: Nat
 
-     def asBoolean: asBoolean = throw new Error("Any.asBoolean")
+     def asBoolean  : Boolean = throw new Error("Any.asBoolean")
     type asBoolean <: Boolean
 }
