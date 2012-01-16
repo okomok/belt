@@ -9,6 +9,7 @@ package belt
 
 
 // x.type seems broken.
+// Also, the type-inferencer needs explicit `self` calls.
 
 trait Any {
     type self = this.type

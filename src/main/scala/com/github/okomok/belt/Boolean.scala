@@ -8,6 +8,9 @@ package com.github.okomok
 package belt
 
 
+// Dependet-method-type computational model seems to lack if-statement.
+
+
 sealed abstract class Boolean extends Any {
     type not <: Boolean
      val not: not
