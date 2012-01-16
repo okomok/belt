@@ -8,7 +8,7 @@ package com.github.okomok
 package belt
 
 
-trait Singleton extends Value {
-    override type value = this.type
-    override  val value: value = this
+trait Function0 extends Any {
+    type apply[a1 <: Any]
+     def apply(a1: Any): apply[a1.self]
 }

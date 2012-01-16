@@ -9,6 +9,4 @@ package com.github.okomok
 
 package object belt {
 
-    type Any = scala.AnyRef
-
 }

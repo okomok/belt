@@ -8,7 +8,7 @@ package com.github.okomok
 package belt
 
 
-sealed abstract class Nat {
+sealed abstract class Nat extends Any {
     type increment <: Nat
      val increment: increment
 

@@ -8,7 +8,9 @@ package com.github.okomok
 package belt
 
 
-trait Value {
-    type value
-     val value: value
+// x.type seems broken.
+
+trait Any {
+    type self = this.type
+     val self: self = this
 }

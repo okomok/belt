@@ -8,7 +8,7 @@ package com.github.okomok
 package belt
 
 
-sealed abstract class List { outer =>
+sealed abstract class List extends Any { outer =>
     type head
      val head: head
     type tail <: List
@@ -16,9 +16,9 @@ sealed abstract class List { outer =>
 
     // Doesn't work for some reason.
     def ::(x: Any) = new List {
-        override type head = x.type
+        override type head = x.self
         override  val head: head = x
-        override type tail = outer.type
+        override type tail = outer.self
         override  val tail: tail = outer
     }
 }
@@ -33,9 +33,9 @@ object Nil extends List {
 
 object Cons {
     def apply(x: Any, xs: List) = new List {
-        override type head = x.type
+        override type head = x.self
         override  val head: head = x
-        override type tail = xs.type
+        override type tail = xs.self
         override  val tail: tail = xs
     }
 }
