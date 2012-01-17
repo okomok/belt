@@ -24,7 +24,7 @@ sealed abstract class Boolean extends Any {
 }
 
 
-object `true` extends Boolean {
+case object `true` extends Boolean {
     override  val not = `false`.self
     override type not = `false`.self
 
@@ -33,7 +33,7 @@ object `true` extends Boolean {
 
 }
 
-object `false` extends Boolean {
+case object `false` extends Boolean {
     override  val not = `true`.self
     override type not = `true`.self
 

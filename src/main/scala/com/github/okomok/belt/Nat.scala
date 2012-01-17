@@ -18,8 +18,8 @@ sealed abstract class Nat extends Any {
      val isZero  : Boolean
     type isZero <: Boolean
 
-    final lazy val increment = Succ(self)
-    final type increment     = Succ[self]
+    final lazy val increment: increment = Succ(self).self
+    final type increment                = Succ[self]#self
 
      def equal(that  : Nat)  : Boolean
     type equal[that <: Nat] <: Boolean
@@ -27,18 +27,14 @@ sealed abstract class Nat extends Any {
      def foldRight(z  : Any, f  : Function2)  : Any
     type foldRight[z <: Any, f <: Function2] <: Any
 
-    final  def plus(that: Nat): plus[that.self] = that.foldRight(self, new Function2 {
+    final  def plus(that  : Nat): plus[that.self] = that.foldRight(self, new Function2 {
         override  def apply(n  : Any, z  : Any) = z.asNat.increment.self
         override type apply[n <: Any, z <: Any] = z#asNat#increment#self
-    }).asNat.asInstanceOf[plus[that.self]]
+    }).asNat.self.asInstanceOf[plus[that.self]]
 
-    final type plus[that <: Nat] = that#foldRight[self, Function2 {
-        type apply[n <: Any, z <: Any] = z#asNat#increment
-    }]#asNat
-
-//    type plus[that <: Nat] <: Boolean
-//    final def plus(that: Nat): plus[that.self] = _plus(that).asInstanceOf[plus[that.self]]
-//   private[belt] def _plus(that: Nat): Any
+    final type plus[that <: Nat]                  = that#foldRight[self,     Function2 {
+                 type apply[n <: Any, z <: Any] = z#asNat#increment#self
+    }]#asNat#self
 }
 
 
@@ -49,11 +45,11 @@ case object Zero extends Nat {
     override  val isZero = `true`.self
     override type isZero = `true`.self
 
-    override  def equal(that  : Nat): equal[that.type] = that.isZero.asInstanceOf[equal[that.type]]
-    override type equal[that <: Nat]                   = that#isZero
+    override  def equal(that  : Nat) = that.isZero.self
+    override type equal[that <: Nat] = that#isZero#self
 
-    override  def foldRight(z  : Any, f  : Function2): foldRight[z.type, f.type] = z.asInstanceOf[foldRight[z.type, f.type]]
-    override type foldRight[z <: Any, f <: Function2]                            = z
+    override  def foldRight(z  : Any, f  : Function2) = z.self
+    override type foldRight[z <: Any, f <: Function2] = z#self
 }
 
 
@@ -64,16 +60,16 @@ final case class Succ[n <: Nat](n: n) extends Nat {
     override  val isZero = `false`.self
     override type isZero = `false`.self
 
-    override  def foldRight(z  : Any, f  : Function2): foldRight[z.type, f.type] = f.apply(self, decrement.foldRight(z, f)).asInstanceOf[foldRight[z.type, f.type]]
-    override type foldRight[z <: Any, f <: Function2]                            = f#apply[self, decrement#foldRight[z, f]]
+    override  def foldRight(z  : Any, f  : Function2) = f.apply(self, decrement.foldRight(z, f)).self
+    override type foldRight[z <: Any, f <: Function2] = f#apply[self, decrement#foldRight[z, f]]#self
 
-    override  def equal(that  : Nat): equal[that.type] = that.isZero.`if`(const(`false`), new Function0 {
+    override  def equal(that  : Nat): equal[that.self] = that.isZero.`if`(const(`false`.self), new Function0 {
         override  def apply = decrement.equal(that.self.decrement).self
         override type apply = decrement#equal[that.self#decrement]#self
-    }).apply.asBoolean.asInstanceOf[equal[that.type]]
-    override type equal[that <: Nat] = that#isZero#`if`[const[`false`.type], Function0 {
-        type apply = decrement#equal[that#self#decrement]
-    }]#apply#asBoolean
+    }).apply.asBoolean.self.asInstanceOf[equal[that.self]]
+    override type equal[that <: Nat]                   = that#isZero#`if`[const[`false`.self],     Function0 {
+                 type apply = decrement#equal[that#self#decrement]#self
+    }]#apply#asBoolean#self
 }
 
 
@@ -88,17 +84,6 @@ object Nat {
     val _7 = Succ(_6).self
     val _8 = Succ(_7).self
     val _9 = Succ(_8).self
-
-    type _0 = _0.type
-    type _1 = _1.type
-    type _2 = _2.type
-    type _3 = _3.type
-    type _4 = _4.type
-    type _5 = _5.type
-    type _6 = _6.type
-    type _7 = _7.type
-    type _8 = _8.type
-    type _9 = _9.type
 }
 
 

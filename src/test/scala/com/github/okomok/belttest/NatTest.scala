@@ -19,6 +19,9 @@ class NatTest extends org.scalatest.junit.JUnit3Suite {
     def inc(n: Nat) = n.increment.self
     def incInc(n: Nat) = inc(inc(n)).self
 
+    def incT(n: Nat): n.self#increment#self = n.increment.self
+    def plusT(n: Nat, m: Nat): n.self#plus[m.self] = n.plus(m)
+
     def testTrivial {
         mustBeTrue { _0 equal _0 }
         mustBeTrue { _1 equal _1 }

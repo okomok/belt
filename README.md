@@ -1,7 +1,7 @@
 
 # belt
 
-Code snippet for investigating dependent-method-types,
+Code snippets for investigating dependent-method-types,
 especially the type-level metaprogramming around them.
 
 
