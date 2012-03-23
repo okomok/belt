@@ -1,9 +1,9 @@
 
 # belt
 
-Code snippets for investigating dependent-method-types,
-especially the type-level metaprogramming around them.
+Code snippets for investigating dependent-method-types.
 
+In this research, you should minimize the use of type-parameters and type-members.
 
 
 ## Links

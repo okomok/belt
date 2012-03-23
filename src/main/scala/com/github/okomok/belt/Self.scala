@@ -8,7 +8,8 @@ package com.github.okomok
 package belt
 
 
-trait Function2 extends Any {
-     def apply(a1  : Any, a2  : Any)  : Any
-    type apply[a1 <: Any, a2 <: Any] <: Any
+// This indirection is sometimes needed for some reason.
+
+trait Self {
+    final protected val self: this.type = this
 }
