@@ -8,8 +8,5 @@ package com.github.okomok
 package belt
 
 
-// This indirection is sometimes needed for some reason.
-
-trait Self {
-    final protected val self: this.type = this
-}
+// SCALACBUG: `belt.` is needed.
+object Unit extends belt.Any

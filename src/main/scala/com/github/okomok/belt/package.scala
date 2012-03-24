@@ -8,5 +8,8 @@ package com.github.okomok
 
 
 package object belt {
+    def checkEq(x: Any)(y: x.type) = Unit.self
 
+    def checkTrue(x: `true`.type) = Unit.self
+    def checkFalse(x: `true`.type) = Unit.self
 }
