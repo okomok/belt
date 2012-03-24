@@ -8,9 +8,5 @@ package com.github.okomok
 package belt
 
 
-// `.self` makes a method dependent.
-
-trait Any {
-    type self = this.type
-    final val self: self = this
-}
+// SCALACBUG: `belt.` is needed.
+object Unit extends belt.Any

@@ -9,29 +9,32 @@ package belt
 
 
 sealed abstract class Boolean extends Any {
-    type not <: Boolean
-     val not: not
-/*
-    type `if`[then <: Function0, _else <: Function0] <: Function0
-     def `if`(then: Function0, _else: Function0): `if`[then.self, _else.self]
-*/
+    val not: Boolean
+
+    val and_true: Boolean
+    val and_false: Boolean
+
+    val or_true: Boolean
+    val or_false: Boolean
 }
 
 
 object `true` extends Boolean {
-    override type not = `false`.type
-    override  val not: not = `false`
-/*
-    override type `if`[then <: Function0, _else <: Function0] = then
-    override  def `if`(then: Function0, _else: Function0): `if`[then.self, _else.self] = then
-*/
+    override val not = `false`.self
+
+    override val and_true = self
+    override val and_false = `false`.self
+
+    override val or_true = self
+    override val or_false = self
 }
 
 object `false` extends Boolean {
-    override type not = `true`.type
-    override  val not: not = `true`
-/*
-    override type `if`[then <: Function0, _else <: Function0] = _else
-    override  def `if`(then: Function0, _else: Function0): `if`[then.self, _else.self] = _else
-*/
+    override val not = `true`.self
+
+    override val and_true = self
+    override val and_false = self
+
+    override val or_true = `true`.self
+    override val or_false = self
 }
