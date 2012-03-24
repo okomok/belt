@@ -8,6 +8,8 @@ package com.github.okomok
 package belt
 
 
+// `.self` makes a type dependent.
+
 trait Any {
     type self = this.type
     final val self: self = this
