@@ -9,4 +9,4 @@ package belt
 
 
 // SCALACBUG: `belt.` is needed.
-object Unit extends belt.Any
+case object Unit extends belt.Any
