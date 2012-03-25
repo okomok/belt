@@ -8,7 +8,7 @@ package com.github.okomok
 package belt
 
 
-// `.self` makes a type dependent.
+// `.self` makes a method dependent.
 
 trait Any {
     type self = this.type

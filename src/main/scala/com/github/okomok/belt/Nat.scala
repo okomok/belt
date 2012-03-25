@@ -21,7 +21,7 @@ sealed abstract class Nat extends Any {
 }
 
 
-object _0 extends Nat {
+case object _0 extends Nat {
     override lazy val decrement = throw new Error("underflow")
     override val increment = _1.self
 
@@ -33,7 +33,7 @@ object _0 extends Nat {
     override val is_5 = `false`.self
 }
 
-object _1 extends Nat {
+case object _1 extends Nat {
     override val decrement = _0.self
     override val increment = _2.self
 
@@ -45,7 +45,7 @@ object _1 extends Nat {
     override val is_5 = `false`.self
 }
 
-object _2 extends Nat {
+case object _2 extends Nat {
     override val decrement = _1.self
     override val increment = _3.self
 
@@ -57,7 +57,7 @@ object _2 extends Nat {
     override val is_5 = `false`.self
 }
 
-object _3 extends Nat {
+case object _3 extends Nat {
     override val decrement = _2.self
     override val increment = _4.self
 
@@ -69,7 +69,7 @@ object _3 extends Nat {
     override val is_5 = `false`.self
 }
 
-object _4 extends Nat {
+case object _4 extends Nat {
     override val decrement = _3.self
     override val increment = _5.self
 
@@ -81,7 +81,7 @@ object _4 extends Nat {
     override val is_5 = `false`.self
 }
 
-object _5 extends Nat {
+case object _5 extends Nat {
     override val decrement = _4.self
     override lazy val increment = throw new Error("overflow")
 
